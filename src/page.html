@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<script>
+  // Before the first paint, so the page opens in the reader's language.
+  try { const saved = localStorage.getItem("causet-lang"); if ([{{langs}}].includes(saved)) document.documentElement.dataset.lang = saved; } catch (e) {}
+</script>
+<style>{{hiding}}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar-in">
+    <a class="mark" href="index.html"><svg class="logo" viewBox="0 0 100 30" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M10 24A8 8 0 0 1 26 24"/><path d="M10 24A16 16 0 0 1 42 24"/><path d="M42 24A8 8 0 0 1 58 24"/><path d="M42 24A16 16 0 0 1 74 24"/><path d="M74 24A8 8 0 0 1 90 24"/></g><g fill="currentColor"><circle cx="10" cy="24" r="3.6"/><circle cx="26" cy="24" r="3.6"/><circle cx="42" cy="24" r="3.6"/><circle cx="58" cy="24" r="3.6"/><circle cx="74" cy="24" r="3.6"/><circle cx="90" cy="24" r="3.6"/></g></svg>causet <small>the guide</small></a>
+    <div class="lang" role="group" aria-label="Code language">{{switch}}</div>
+  </div>
+</header>
+
+<div class="frame">
+  <nav class="rail pages-rail" aria-label="Guide">
+    <h2>Guide</h2>
+    <ol class="pages">{{nav}}</ol>
+    <a href="https://github.com/tizoc/causet">Guide source on GitHub</a>
+  </nav>
+
+  <main>
+    <p class="release-notice"><strong>Unreleased.</strong> Packages are not on crates.io, npm or opam yet. Use <a href="https://github.com/tizoc/causet#using-unreleased-ports">commit-pinned source</a>.</p>
+    <p class="eyebrow">Guide · {{number}}</p>
+    <h1>{{heading}}</h1>
+    <p class="lede">{{summary}}</p>
+{{content}}
+    {{next}}
+    <footer>
+      <span>Every example here is compiled and run as a test in its port's repository.</span>
+      <span><a href="https://github.com/tizoc/causet">causet</a> · <a href="https://github.com/tizoc/causet.rs">causet.rs</a> · <a href="https://github.com/tizoc/causet.ml">causet.ml</a> · <a href="https://github.com/tizoc/causet.ts">causet.ts</a></span>
+    </footer>
+  </main>
+
+  <nav class="rail toc-rail" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul class="toc">{{toc}}</ul>
+  </nav>
+</div>
+<script src="guide.js"></script>
+</body>
+</html>

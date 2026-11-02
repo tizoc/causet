@@ -1,0 +1,9 @@
+[submodule "causet.rs"]
+	path = ports/rust
+	url = https://github.com/tizoc/causet.rs.git
+[submodule "causet.ml"]
+	path = ports/ocaml
+	url = https://github.com/tizoc/causet.ml.git
+[submodule "causet.ts"]
+	path = ports/typescript
+	url = https://github.com/tizoc/causet.ts.git

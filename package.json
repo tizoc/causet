@@ -1,0 +1,27 @@
+{
+  "name": "causet-guide",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Builds the Causet guide from its pages and the ports' tested examples.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@10.7.1",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node src/main.ts",
+    "check": "tsc --noEmit",
+    "test": "node --test test/*.test.ts",
+    "lint": "biome check .",
+    "format": "biome format --write ."
+  },
+  "dependencies": {
+    "markdown-it": "15.0.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.3",
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}
